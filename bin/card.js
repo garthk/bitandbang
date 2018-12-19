@@ -13,14 +13,14 @@ let options = {
 }
 // Text + chalk definitions
 let data = {
-  'name': chalk.white('Tierney Cyren /'),
-  'handle': chalk.cyan('bitandbang'),
-  'work': chalk.white('Senior Cloud Developer Advocate at Microsoft'),
-  'twitter': chalk.cyan('https://twitter.com/bitandbang'),
-  'github': chalk.cyan('https://github.com/bnb'),
-  'linkedin': chalk.cyan('https://linkedin.com/in/bitandbang'),
-  'web': chalk.cyan('https://bnb.im'),
-  'npx': chalk.white('npx bitandbang'),
+  'name': chalk.white('Garth Kidd /'),
+  'handle': chalk.cyan('garthk'),
+  'work': chalk.white('Senior Software Engineer at Anditi Pty Limited'),
+  'twitter': chalk.cyan('https://twitter.com/garthk'),
+  'github': chalk.cyan('https://github.com/garthk'),
+  'linkedin': chalk.cyan('https://linkedin.com/in/garthk'),
+  'web': chalk.cyan('https://example.com'),
+  'npx': chalk.white('npx garthk'),
   'labelWork': chalk.white.bold('      Work:'),
   'labelTwitter': chalk.white.bold('   Twitter:'),
   'labelGitHub': chalk.white.bold('    GitHub:'),
@@ -40,6 +40,15 @@ var webing = `${data.labelWeb}  ${data.web}`
 var carding = `${data.labelCard}  ${data.npx}`
 
 // Put all our output together into a single variable so we can use boxen effectively
-let output = heading + newline + newline + working + newline + twittering + newline + githubing + newline + linkedining + newline + webing + newline + newline + carding
-
+let output = [
+  heading,
+  '',
+  working,
+  twittering,
+  githubing,
+  linkedining,
+  // webing,
+  '',
+  carding
+].join(newline)
 console.log(chalk.green(boxen(output, options)))
